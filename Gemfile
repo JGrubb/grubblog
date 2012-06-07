@@ -7,6 +7,8 @@ gem 'rails', '3.2.3'
 
 gem 'sqlite3'
 gem 'friendly_id'
+gem 'therubyracer'
+#gem 'twitter-bootstrap-rails'
 
 
 # Gems used only for assets and not required
