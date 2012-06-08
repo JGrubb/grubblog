@@ -9,6 +9,10 @@ Blog::Application.routes.draw do
   #resource :sessions
   
   resources :users
+  
+  controller :posts do
+    get 'posts/all' => :all
+  end
 
   resources :posts
 

@@ -3,9 +3,18 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.order("created_at DESC").limit(5)
-
+    @title = "Home"
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+  
+  def all
+    @posts = Post.order("created_at DESC")
+    @title = "All posts"
+    respond_to do |format|
+      format.html
       format.json { render json: @posts }
     end
   end
@@ -14,7 +23,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
+    @title = @post.title
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }

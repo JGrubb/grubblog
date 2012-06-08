@@ -2,18 +2,20 @@
 
 <%= notice %>
 
-<%= form_tag do %>
+<div id="login">
+  <%= form_tag do %>
   
-  <div class="field">
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="submit">
-    <%= submit_tag "Log in"%>
-  </div>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email] %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <div class="submit">
+      <%= submit_tag "Log in"%>
+    </div>
   
-<% end %>
+  <% end %>
+</div>

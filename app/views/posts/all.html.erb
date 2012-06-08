@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+  <div class="post">
+    <div class="date"><%= short_date(post.created_at) %></div> - <%= link_to post.title, post %>
+  </div>
+<% end %>
