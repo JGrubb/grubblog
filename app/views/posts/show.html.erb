@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
+<h2>
   <%= @post.title %>
-</p>
+</h2>
 
-<p>
-  <b>Body:</b>
+<div class="post">
   <%= @post.body.html_safe %>
-</p>
+</div>
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
