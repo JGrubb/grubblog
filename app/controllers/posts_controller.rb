@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :require_user, :except => [:show, :index, :all]
   # GET /posts
   # GET /posts.json
   def index
@@ -44,6 +45,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @title = "Editing #{@post.title}"
   end
 
   # POST /posts

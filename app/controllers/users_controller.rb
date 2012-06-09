@@ -17,17 +17,4 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
   
-  private
-  
-  def require_user
-    unless logged_in?
-      flash[:error] = "Sorry jack.  You gotta be an admin to do that."
-      redirect_to root_url
-    end
-  end
-  
-  def logged_in?
-    !!current_user
-  end
-  
 end
