@@ -8,7 +8,9 @@
 }
 
 .post {
-  padding: 0.5em 0;
+  &.all {
+    padding: 0.5em 0;
+  }
   .date {
     display: inline-block;
   }
