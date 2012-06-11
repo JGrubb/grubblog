@@ -8,8 +8,11 @@
 }
 
 .post {
-  margin: .5em 0;
+  padding: 0.5em 0;
   .date {
     display: inline-block;
+  }
+  &.even {
+    background: #eee;
   }
 }

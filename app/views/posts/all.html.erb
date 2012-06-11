@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <div class="post">
+  <div class="post <%= cycle('odd', 'even')%>">
     <div class="date"><%= short_date(post.created_at) %></div> - <%= link_to post.title, post %>
   </div>
 <% end %>

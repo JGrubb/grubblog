@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-
+    @title = "New post"
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @post }
