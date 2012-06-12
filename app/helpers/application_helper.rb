@@ -9,8 +9,12 @@ module ApplicationHelper
   end
   
   def dat_render(text)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-        :autolink => true, :space_after_headers => true, :no_intra_emphasis => true)
+    options = {
+      :autolink => true,
+      :space_after_headers => true,
+      :no_intra_emphasis => true
+    }
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, options)
     return markdown.render(text).html_safe
   end
   
