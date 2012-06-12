@@ -1,13 +1,12 @@
 <%= render "layouts/admin" %>
-<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-    :autolink => true, :space_after_headers => true) %>
+
 <% @posts.each do |post| %>
   <div class="post">
     <h2><%= link_to post.title, post %></h2>
     <div class="date">
       <%= post_date(post.created_at) %>
     </div>
-    <div class="content"><%= markdown.render(post.body).html_safe %></div>
+    <div class="content"><%= dat_render(post.body) %></div>
     <% if current_user %>
     <p><%= link_to 'Edit', edit_post_path(post) %></p>
     <p><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
