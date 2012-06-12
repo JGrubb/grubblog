@@ -1,5 +1,6 @@
 <%= render "layouts/admin" %>
-
+<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+    :autolink => true, :space_after_headers => true) %>
 <h2>
   <%= @post.title %>
 </h2>
@@ -8,7 +9,7 @@
 </div>
 
 <div class="post">
-  <%= @post.body.html_safe %>
+  <%= dat_render(@post.body) %>
 </div>
 
 <% if current_user %>
