@@ -1,21 +1,22 @@
 module ApplicationHelper
   
   def post_date(date)
-    return date.strftime("%A %B %d, %Y at %I:%M%p")
+    date.strftime("%A %B %d, %Y at %I:%M%p")
   end
   
   def short_date(date)
-    return date.strftime("%D")
+    date.strftime("%D")
   end
   
   def dat_render(text)
     options = {
       :autolink => true,
       :space_after_headers => true,
-      :no_intra_emphasis => true
+      :no_intra_emphasis => true,
+      :fenced_code_blocks => true
     }
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, options)
-    return markdown.render(text).html_safe
+    markdown.render(text).html_safe
   end
   
 end
