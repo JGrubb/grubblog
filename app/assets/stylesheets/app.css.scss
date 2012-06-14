@@ -1,3 +1,5 @@
+@import "./lib";
+
 body {
   font-family: 'lucida grande' sans-serif;
   font-size: 90%;
@@ -20,10 +22,8 @@ a:hover {
 }
 
 .wrapper {
-  max-width: 940px;
-  margin: 0 auto;
+  @include container;
   padding: 0 1em;
-  background: white;
 }
 
 #header {

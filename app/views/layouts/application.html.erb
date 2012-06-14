@@ -28,7 +28,13 @@
     <div class="wrapper">
       <% if alert %><p class="notice"><%= alert %></p><% end %>
       <% if flash[:error] %><p class="errors"><%= flash[:error] %></p><% end %>
-      <%= yield %>
+      <div id="main">
+        <%= yield %>
+      </div>
+      <aside id="right">
+        <h2>Hola</h2>
+        <p>This is Johnny Grubb's new blog.  I tend to write about more technical things lately, but music and the business of it also surfaces from time to time.</p>
+      </aside>
     </div>
   </div>
   <div id="footer">
