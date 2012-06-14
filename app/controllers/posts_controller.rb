@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :require_user, :except => [:show, :index, :all]
+  before_filter :require_user, :only => [:new, :create, :update, :destroy]
   # GET /posts
   # GET /posts.json
   def index
