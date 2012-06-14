@@ -22,7 +22,7 @@ a:hover {
 }
 
 .wrapper {
-  @include container;
+  max-width: 800px;
   padding: 0 1em;
 }
 
