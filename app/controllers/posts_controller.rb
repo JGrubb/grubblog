@@ -8,6 +8,22 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
+      format.xml
+    end
+  end
+  
+  def sitemap
+    @posts = Post.all
+    respond_to do |format|
+      format.xml
+    end
+  end
+  
+  def feed
+    @posts = Post.order("created_at DESC").limit(20)
+    respond_to do |format|
+      format.xml
+      format.rss { render :layout => false }
     end
   end
   

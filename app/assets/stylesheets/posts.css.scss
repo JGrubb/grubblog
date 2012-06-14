@@ -17,6 +17,22 @@
   &.even {
     background: #eee;
   }
+  .aside {
+    float: right;
+    font-size: 1.1em;
+    padding: 1em;
+    font-style: italic;
+    color: #888;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    width: 35%;
+    margin-left: 1em;
+    margin-bottom: .5em;
+    @media screen and (max-width: 480px) {
+      width: auto;
+      float: none;
+    }
+  }
 }
 
 .edit_post,

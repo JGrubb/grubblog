@@ -12,6 +12,8 @@ Blog::Application.routes.draw do
   
   controller :posts do
     get 'posts/all' => :all
+    get 'feed' => :feed
+    get 'sitemap' => :sitemap
   end
 
   resources :posts
