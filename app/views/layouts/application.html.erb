@@ -17,11 +17,9 @@
 <body>
   <header id="header">
     <div class="wrapper">
-      <h1><%= link_to 'Johnny Grubb', root_path %></h1>
+      <h1><%= link_to 'Johnny Grubb', root_path, :class => "brand" %></h1>
       <p><em>Adventures in stuff</em></p>
-      <div id="nav">
-        <%= render "layouts/nav" %>
-      </div>
+      <%= render "layouts/nav" %>
     </div>
   </header>
   <div id="body">

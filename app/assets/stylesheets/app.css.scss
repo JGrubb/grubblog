@@ -29,15 +29,16 @@ a:hover {
   border-bottom: 1px solid #ddd;
   overflow: auto;
   background: #f7f7f7;
+  padding-top: 1em;
 }
 
-#nav ul {
+ul.nav {
   padding: 0 0 1em;
   overflow: auto;
   margin: 0;
 }
 
-#nav li {
+ul.nav li {
   list-style: none;
   margin: 0 10px 0 0;
   padding: 0;
