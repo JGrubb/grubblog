@@ -15,7 +15,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="header">
+  <header id="header">
     <div class="wrapper">
       <h1><%= link_to 'Johnny Grubb', root_path %></h1>
       <p><em>Adventures in stuff</em></p>
@@ -23,7 +23,7 @@
         <%= render "layouts/nav" %>
       </div>
     </div>
-  </div>
+  </header>
   <div id="body">
     <div class="wrapper">
       <% if alert %><p class="notice"><%= alert %></p><% end %>

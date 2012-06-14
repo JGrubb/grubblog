@@ -18,3 +18,29 @@
     background: #eee;
   }
 }
+
+.edit_post {
+  width: 65%;
+  margin: 0 auto;
+  textarea {
+    width: 95%;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    padding: .5em;
+  }  
+  .field {
+    margin: 1em 0;
+  }
+  label {
+    display: block;
+  }
+  input.submit {
+    padding: .3em 2em;
+    border-radius: 2px;
+    border: 1px solid #aaa;
+    background: #ddd;
+    &:hover {
+      background: #ccc;
+    }
+  }
+}

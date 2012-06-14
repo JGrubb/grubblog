@@ -1,7 +1,7 @@
 <%= render "layouts/admin" %>
 
 <% @posts.each do |post| %>
-  <div class="post">
+  <article class="post">
     <h2><%= link_to post.title, post %></h2>
     <div class="date">
       <%= post_date(post.created_at) %>
@@ -11,5 +11,5 @@
     <p><%= link_to 'Edit', edit_post_path(post) %></p>
     <p><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
     <% end %>
-  </div>
+  </article>
 <% end %>

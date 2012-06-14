@@ -1,0 +1,60 @@
+body {
+  font-family: 'lucida grande' sans-serif;
+  font-size: 90%;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+a {
+  color: #396FD9;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 1em;
+  background: white;
+}
+
+#header {
+  border-bottom: 1px solid #ddd;
+  overflow: auto;
+}
+
+#nav ul {
+  padding: 0 0 1em;
+  overflow: auto;
+  margin: 0;
+}
+
+#nav li {
+  list-style: none;
+  margin: 0 10px 0 0;
+  padding: 0;
+  float: left;
+}
+
+#admin {
+  padding: 1em 0 0;
+}
+
+.errors {
+  background: #FFD2D8;
+  padding: 1em;
+  border: 1px solid red;
+}
+
+.notice {
+  padding: 1em;
+  border: 1px solid green;
+}

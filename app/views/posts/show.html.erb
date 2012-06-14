@@ -1,17 +1,16 @@
 <%= render "layouts/admin" %>
-<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-    :autolink => true, :space_after_headers => true) %>
-<h2>
-  <%= @post.title %>
-</h2>
-<div class="date">
-  <%= post_date(@post.created_at)%>
-</div>
+<article>
+  <h2>
+    <%= @post.title %>
+  </h2>
+  <div class="date">
+    <%= post_date(@post.created_at)%>
+  </div>
 
-<div class="post">
-  <%= dat_render(@post.body) %>
-</div>
-
+  <section class="post">
+    <%= dat_render(@post.body) %>
+  </section>
+</article>
 <% if current_user %>
   <%= link_to 'Edit', edit_post_path(@post) %> |
   <%= link_to 'Back', posts_path %>
