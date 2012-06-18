@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :update, :destroy]
-  caches_page :index
+  #caches_page :index
   # GET /posts
   # GET /posts.json
   def index
