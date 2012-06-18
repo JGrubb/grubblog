@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :update, :destroy]
-  #caches_page :index
+  caches_page [:index, :show]
   # GET /posts
   # GET /posts.json
   def index
@@ -83,6 +83,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+    expire_page :action => [:index, :show]
   end
 
   # PUT /posts/1
@@ -99,6 +100,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+    expire_page :action => [:index, :show]
   end
 
   # DELETE /posts/1
