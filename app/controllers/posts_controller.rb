@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :update, :destroy]
   # GET /posts
   # GET /posts.json
-  # caches_page :index, :show
+  caches_page :index
   def index
     @posts = Post.order("created_at DESC").limit(5)
     @title = "Home"
@@ -83,6 +83,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+    expire_page :index
   end
 
   # PUT /posts/1

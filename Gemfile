@@ -10,6 +10,7 @@ gem 'mysql'
 gem 'friendly_id'
 gem 'therubyracer'
 gem 'redcarpet'
+gem 'twitter'
 
 # Gems used only for assets and not required
 # in production environments by default.

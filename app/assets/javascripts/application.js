@@ -11,4 +11,3 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require modernizr
-//= require jquery-1.7.2
