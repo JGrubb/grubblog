@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :update, :destroy]
   # GET /posts
   # GET /posts.json
-  caches_page :index
+  # caches_page :index
   def index
     @posts = Post.order("created_at DESC").limit(5)
     @title = "Home"
