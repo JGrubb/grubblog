@@ -83,7 +83,6 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
-    expire_page :index
   end
 
   # PUT /posts/1
