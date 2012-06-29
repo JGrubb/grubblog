@@ -13,7 +13,12 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <meta name="google-site-verification" content="lFb_pR6GrqO_LZynmEmpu8hI-xYJhJrdjmWu1Zo3FLk" />
+  <script>
+    var _gaq=[['_setAccount','UA-8646459-7'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
 </head>
 <body>
   <header id="header">
@@ -38,11 +43,5 @@
       <p>My name's John(ny) and this is my new blog.  I tend to write about more technical things lately, but music and the business of it also surface from time to time.  I play bass in <a href="http://www.emmittnershiband.com/" title="Emmitt-Nershi Band">a bluegrass band</a> coming to a town near you, but building stuff on the web pays the bills.  I've been working with Drupal in general for the last few years, but have recently gotten much more into Javascript and Rails. Say "<a href="http://twitter.com/johnnygrubb">Hello</a>".</p>
     </div>
   </div>
-  <script>
-    var _gaq=[['_setAccount','UA-8646459-7'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
 </body>
 </html>
