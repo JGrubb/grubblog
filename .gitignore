@@ -16,3 +16,4 @@
 config/database.yml
 config/twitter.rb
 blog.sql
+config/email.rb

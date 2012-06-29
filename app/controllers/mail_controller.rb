@@ -2,6 +2,7 @@ class MailController < ApplicationController
   
   def contact
     @message = Message.new
+    @title = "Contact"
   end
 
   def create
@@ -11,8 +12,8 @@ class MailController < ApplicationController
       ContactMailer.new_message(@message).deliver
       redirect_to(root_path, :notice => "Message was successfully sent.")
     else
-      flash.now.alert = "Please fill all fields."
-      render :new
+      flash.now.alert = "Please fill all fields. Correctly."
+      render :contact
     end
   end
   

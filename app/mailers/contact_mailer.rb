@@ -1,11 +1,13 @@
 class ContactMailer < ActionMailer::Base
   
-  default :from => "site@johnnygrubb.com"
   default :to => "therealjohnnygrubb@gmail.com"
 
   def new_message(message)
     @message = message
-    mail(:subject => "JG.com contact")
+    mail( :from           => @message.name, 
+          :subject        => "johnnygrubb.com contact",
+          :template_path  => "contact_mailer",
+          :template_name  => "contact_email")
   end
   
 end
