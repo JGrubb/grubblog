@@ -9,7 +9,7 @@
     <div class="content"><%= dat_render(post.body) %></div>
     <% if current_user %>
     <p><%= link_to 'Edit', edit_post_path(post) %></p>
-    <p><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></p>
+    <p><%= link_to 'Delete', post, :method => :delete %></p>
     <% end %>
   </article>
 <% end %>

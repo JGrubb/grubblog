@@ -9,13 +9,13 @@
 
 .post {
   &.all {
-    padding: 0.5em 0;
+    padding: 0.5em;
   }
   .date {
     display: inline-block;
   }
   &.even {
-    background: #eee;
+    background: #eaeaea;
   }
   .aside {
     float: right;

@@ -1,5 +1,11 @@
 Blog::Application.routes.draw do
   
+  
+  controller :mail do
+    get "contact" => :contact, :as => 'contact'
+    post "contact" => :create, :as => 'contact'
+  end
+  
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
