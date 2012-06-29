@@ -11,3 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require modernizr
+//= require jquery
+//= require jquery_ujs
