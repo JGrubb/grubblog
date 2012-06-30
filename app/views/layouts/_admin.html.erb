@@ -1,5 +1,7 @@
 <% if current_user %>
   <div id="admin">
-    <%= link_to 'New Post', new_post_path %> | <%= link_to 'Log out', :controller => :sessions, :action => :destroy %>
+    <%= link_to 'New Post', new_post_path %> | 
+    <%= link_to 'Log out', :controller => :sessions, :action => :destroy %> | 
+    <%= link_to 'Unpublished', posts_unpublished_path %>
   </div>
 <% end %>
