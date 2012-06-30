@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  before_filter :require_user, :only => [:new, :create, :update, :destroy]
+  before_filter :require_user, :only => [:new, :create, :update, :destroy, :unpublished]
   # GET /posts
   # GET /posts.json
   # caches_page :index
   def index
-    @posts = Post.order("created_at DESC").limit(5)
+    @posts = Post.order("created_at DESC").where(:published => true).limit(5)
     @title = "Home"
     respond_to do |format|
       format.html # index.html.erb
@@ -14,14 +14,14 @@ class PostsController < ApplicationController
   end
   
   def sitemap
-    @posts = Post.all
+    @posts = Post.where(:published => true).all
     respond_to do |format|
       format.xml
     end
   end
   
   def feed
-    @posts = Post.order("created_at DESC").limit(20)
+    @posts = Post.order("created_at DESC").where(:published => true).limit(20)
     respond_to do |format|
       format.xml
       format.rss { render :layout => false }
@@ -30,11 +30,21 @@ class PostsController < ApplicationController
   end
   
   def all
-    @posts = Post.order("created_at DESC")
+    @posts = Post.order("created_at DESC").where(:published => true)
     @title = "All posts"
     respond_to do |format|
       format.html
       format.json { render json: @posts }
+    end
+  end
+  
+  def unpublished
+    @posts = Post.order("created_at DESC").where(:published => false)
+    
+    respond_to do |format|
+      format.html { render "index" }
+      format.json { render json: @posts }
+      format.xml
     end
   end
 

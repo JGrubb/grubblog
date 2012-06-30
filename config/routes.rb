@@ -20,6 +20,7 @@ Blog::Application.routes.draw do
     get 'posts/all' => :all
     get 'feed' => :feed
     get 'sitemap' => :sitemap
+    get 'posts/unpublished' => :unpublished
   end
 
   resources :posts
