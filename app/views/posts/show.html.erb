@@ -10,6 +10,43 @@
   <section class="post">
     <%= dat_render(@post.body) %>
   </section>
+  
+  <section id="comments">
+  
+  <h3>Comments</h3>
+  <% @post.comments.each do |comment| %>
+    
+  <div class="name <%= cycle('even', 'odd') %>"><%= comment.name %></div>
+
+    <div class="body">
+      <%= comment.body %>
+    </div>
+  <% end %>
+  
+  <h3>Add a comment:</h3>
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email%>
+    </div>
+    <div class="field">
+      <%= f.label :website %>
+      <%= f.text_field :website %>
+    </div>
+    <div class="field">
+      <%= f.label :body %><br />
+      <%= f.text_area :body %>
+    </div>
+    <div class="field">
+      <%= f.submit %>
+    </div>
+  <% end %>
+  </section>
+  
 </article>
 <% if current_user %>
   <%= link_to 'Edit', edit_post_path(@post) %> |
