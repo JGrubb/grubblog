@@ -47,14 +47,6 @@ ActiveRecord::Schema.define(:version => 20120630204535) do
 
   add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true
 
-  create_table "tweets", :force => true do |t|
-    t.text     "body"
-    t.string   "tweet_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.datetime "last_checked"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"
