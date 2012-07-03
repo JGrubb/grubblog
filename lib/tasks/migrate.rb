@@ -44,22 +44,24 @@ new_posts.each do |post|
   #puts post[:updated_at]
 end
 
-revisions.each do |item|
-  created_at = Time.at(item[:created]).to_datetime
-  updated_at = Time.at(item[:changed]).to_datetime
-  title = item[:title]
-  id = item[:nid]
-  body = item[:body]
-  published = item[:status]
-  slug = slugs.first(:src => "node/#{id}")
-  #puts "#{title} - #{slug[:dst]}"
-  #puts item
-  posts.insert(:id => "#{id.to_i + 18}", :title => title, :body => body, :published => published, :slug => slug[:dst][8..-1], :created_at => created_at, :updated_at => updated_at)
-  if slug[:dst][8..-1]
-    DB2[:friendly_id_slugs].insert(:slug => slug[:dst][8..-1], :sluggable_id => "#{id.to_i + 18}", :sluggable_type => 'Post', :created_at => Time.now)
+File.open('migrate.csv', 'w') do |f|
+  revisions.each do |item|
+    created_at = Time.at(item[:created]).to_datetime
+    updated_at = Time.at(item[:changed]).to_datetime
+    title = item[:title]
+    id = item[:nid]
+    body = item[:body]
+    published = item[:status]
+    slug = slugs.first(:src => "node/#{id}")
+    #puts "#{title} - #{slug[:dst]}"
+    #puts item
+    posts.insert(:id => "#{id.to_i + 20}", :title => title, :body => body, :published => published, :slug => slug[:dst][8..-1], :created_at => created_at, :updated_at => updated_at)
+    if slug[:dst][8..-1]
+      DB2[:friendly_id_slugs].insert(:slug => slug[:dst][8..-1], :sluggable_id => "#{id.to_i + 20}", :sluggable_type => 'Post', :created_at => Time.now)
+    end
+    f.puts "http://ignoredbydinosaurs.com/#{slug[:dst]}, http://www.johnnygrubb.com/posts/#{slug[:dst][8..-1]}"
   end
 end
-
 #posts.each do |post|
 #  puts post[:slug][8..-1]
 #end

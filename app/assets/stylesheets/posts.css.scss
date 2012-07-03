@@ -58,3 +58,31 @@
     }
   }
 }
+
+#comments {
+  h3 {
+    border-bottom: 1px solid #bbb;
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+  .field {
+    margin: 0.5em 0;
+    input[type="text"] {
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      width: 20em;
+      padding: 0.2em 0.3em;
+    }
+    textarea {
+      width: 75%;
+      height: 12em;
+      border: 1px solid #ccc;
+    }
+  }
+  .comment {
+    padding: 1em;
+    &.even {
+      background: #eee;
+    }
+  }
+}
