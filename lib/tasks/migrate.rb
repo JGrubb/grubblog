@@ -31,12 +31,6 @@ slugs = DB[:url_alias].where(:src.like('node%'))
 posts = DB2[:posts]
 new_posts = DB3[:posts]
 
-#slugs.each do |slug|
-#  #puts slug
-#  id = slug[:src].gsub(/node\//, '')
-#  DB2[:friendly_id_slugs].where('id > 188').delete
-#end
-
 DB2[:users].insert(DB3[:users].first)
 
 new_posts.each do |post|
@@ -62,6 +56,3 @@ File.open('migrate.csv', 'w') do |f|
     f.puts "http://ignoredbydinosaurs.com/#{slug[:dst]}, http://www.johnnygrubb.com/posts/#{slug[:dst][8..-1]}"
   end
 end
-#posts.each do |post|
-#  puts post[:slug][8..-1]
-#end
