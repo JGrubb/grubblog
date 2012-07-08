@@ -40,7 +40,16 @@
       </div>
       <div class="grid twitter">
         <h2><a href="http://twitter.com/johnnygrubb">Twitter</a></h2>
-        <div></div>
+        <div>
+          <%= @tweets.each do |tweet| %>
+            <div class="tweet">
+              <%= tweet["text"] %>
+            </div>
+            <div class="time">
+              <%= tweet["created_at"] %>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="grid calendar">
         <h2>Github</h2>
