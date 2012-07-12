@@ -1,15 +1,19 @@
 <%= render "layouts/admin" %>
 
-<% @posts.each do |post| %>
-  <article class="post">
-    <h2><%= link_to post.title, post %></h2>
-    <div class="date">
-      <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
-    </div>
-    <div class="content"><%= dat_render(truncate((post.body), :length => 1200)) %></div>
-    <% if current_user %>
-    <p><%= link_to 'Edit', edit_post_path(post) %></p>
-    <p><%= link_to 'Delete', post, :method => :delete %></p>
-    <% end %>
-  </article>
-<% end %>
+<div id="index">
+  <% @posts.each do |post| %>
+    <article>
+      <div class="post-wrapper" >
+        <h2><%= link_to post.title, post %></h2>
+        <div class="date">
+          <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
+        </div>
+        <div class="content"><%= dat_render(truncate((post.body), :length => 1200)) %></div>
+        <% if current_user %>
+        <p><%= link_to 'Edit', edit_post_path(post) %></p>
+        <p><%= link_to 'Delete', post, :method => :delete %></p>
+        <% end %>
+      </div>
+    </article>
+  <% end %>
+</div>
