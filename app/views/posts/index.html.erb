@@ -6,7 +6,7 @@
     <div class="date">
       <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
     </div>
-    <div class="content"><%= dat_render(post.body) %></div>
+    <div class="content"><%= dat_render(truncate((post.body), :length => 1200)) %></div>
     <% if current_user %>
     <p><%= link_to 'Edit', edit_post_path(post) %></p>
     <p><%= link_to 'Delete', post, :method => :delete %></p>

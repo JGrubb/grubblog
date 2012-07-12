@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  
+  include ActionView::Helpers::TextHelper
+  
   before_filter :require_user, :only => [:new, :create, :update, :destroy, :unpublished]
   # GET /posts
   # GET /posts.json
@@ -6,6 +9,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order("created_at DESC").where(:published => true).limit(5)
     @title = "Home"
+    @description = "the blog and website of bassist and programmer Johnny Grubb.  no baseball information here."
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -53,6 +57,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @title = @post.title
+    @description = @post.description ? @post.description : truncate(@post.body, :length => 250)
     if request.path != post_path(@post)
       return redirect_to @post, :status => :moved_permanently
     end
