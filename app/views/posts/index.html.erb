@@ -9,9 +9,9 @@
           <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
         </div>
         <div class="content"><%= dat_render(truncate((post.body), :length => 1200)) %></div>
+        <p><%= link_to('Read more ...', post) %></p>
         <% if current_user %>
-        <p><%= link_to 'Edit', edit_post_path(post) %></p>
-        <p><%= link_to 'Delete', post, :method => :delete %></p>
+        <p><%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Delete', post, :method => :delete, :confirm => "are you sure?" %></p>
         <% end %>
       </div>
     </article>
