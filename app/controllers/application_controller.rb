@@ -10,7 +10,9 @@ class ApplicationController < ActionController::Base
   def get_tweets
     @raw_tweets = Tweet.last
     # saving JSON to a database turns it in YAML.  Is that just a Rails thing?
-    @tweets = YAML.load(@raw_tweets.body)
+    if @raw_tweets
+      @tweets = YAML.load(@raw_tweets.body)
+    end
   end
   
   protected
