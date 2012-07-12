@@ -43,14 +43,14 @@
       <div class="grid twitter">
         <h2><a href="http://twitter.com/johnnygrubb">Twitter</a></h2>
         <div>
-          <% unless @tweets.nil?; @tweets.each do |tweet| unless @tweets.nil? %>
+          <% unless @tweets.nil?; @tweets.each do |tweet| %>
             <div class="tweet">
               <p><%= tweet["text"] %></p>
               <div class="time">
                 <%= link_to "#{distance_of_time_in_words_to_now(tweet["created_at"])} ago", "http://twitter.com/johnnygrubb/status/#{tweet["id"]}" %>
               </div>
             </div>
-          <% end %>
+          <% end; end; %>
         </div>
       </div>
       <div class="grid calendar">
