@@ -1,5 +1,5 @@
 <%= render "layouts/admin" %>
-<article>
+<article class="post-wrapper">
   <% if @post.errors.any? %>
     <div id="error_explanation">
      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this media from being saved:</h2>
@@ -14,7 +14,7 @@
     <%= @post.title %>
   </h2>
   <div class="date">
-    <%= post_date(@post.created_at)%>
+    <%= "#{distance_of_time_in_words_to_now(@post.created_at)} ago" %>
   </div>
 
   <section class="post">

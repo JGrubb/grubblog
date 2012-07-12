@@ -4,7 +4,7 @@
   <article class="post">
     <h2><%= link_to post.title, post %></h2>
     <div class="date">
-      <%= post_date(post.created_at) %>
+      <%= "#{distance_of_time_in_words_to_now(post.created_at)} ago" %>
     </div>
     <div class="content"><%= dat_render(post.body) %></div>
     <% if current_user %>

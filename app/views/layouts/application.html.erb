@@ -18,9 +18,11 @@
 <body>
   <header id="header">
     <div class="wrapper">
+      <div class="interior">
       <h1><%= link_to 'Johnny Grubb', root_path, :class => "brand" %></h1>
       <p><em>Adventures in stuff</em></p>
       <%= render "layouts/nav" %>
+      </div>
     </div>
   </header>
   <div id="body">
@@ -41,12 +43,12 @@
       <div class="grid twitter">
         <h2><a href="http://twitter.com/johnnygrubb">Twitter</a></h2>
         <div>
-          <%= @tweets.each do |tweet| %>
+          <% @tweets.each do |tweet| %>
             <div class="tweet">
-              <%= tweet["text"] %>
-            </div>
-            <div class="time">
-              <%= tweet["created_at"] %>
+              <p><%= tweet["text"] %></p>
+              <div class="time">
+                <%= link_to "#{distance_of_time_in_words_to_now(tweet["created_at"])} ago", "http://twitter.com/johnnygrubb/status/#{tweet["id"]}" %>
+              </div>
             </div>
           <% end %>
         </div>
