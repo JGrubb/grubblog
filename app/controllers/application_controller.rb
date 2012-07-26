@@ -23,18 +23,22 @@ class ApplicationController < ActionController::Base
     # don't check more than evey 5 minutes
     if (tweet.updated_at < 5.minutes.ago)
       # grab last 3 tweets from API
-      t = Net::HTTP.get_response("api.twitter.com", "/1/statuses/user_timeline.json?screen_name=johnnygrubb&count=3")
-      nt = JSON.parse(t.body)
-      json = YAML.load(tweet.body)
-      # compare the ids of the most recent tweets from API call and DB
-      if nt[0]["id"] == json[0]["id"]
-        # if they match, no new tweets. update updated_at.
-        tweet.update_attributes(:updated_at => Time.now)
-      else 
-        # if they don't, save the last 3 tweets.
-        new_tweet = Tweet.new
-        new_tweet.body = nt
-        new_tweet.save
+      begin
+        t = Net::HTTP.get_response("api.twitter.com", "/1/statuses/user_timeline.json?screen_name=johnnygrubb&count=3")
+        nt = JSON.parse(t.body)
+        json = YAML.load(tweet.body)
+        # compare the ids of the most recent tweets from API call and DB
+        if nt[0]["id"] == json[0]["id"]
+          # if they match, no new tweets. update updated_at.
+          tweet.update_attributes(:updated_at => Time.now)
+        else 
+          # if they don't, save the last 3 tweets.
+          new_tweet = Tweet.new
+          new_tweet.body = nt
+          new_tweet.save
+        end
+      rescue => e
+        return
       end
     end
   end
