@@ -14,6 +14,9 @@
       <%= f.label :message %><br />
       <%= f.text_area :message %>
     </div>
+    <div class="field">
+      <p>Roses are red, violets are <%= f.text_field :spamtrap %><p>
+    </div>
     <%= f.submit "Send it" %>
   <% end %>
 </div>
