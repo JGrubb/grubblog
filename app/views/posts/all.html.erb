@@ -3,3 +3,6 @@
     <div class="date"><%= short_date(post.created_at) %></div> - <%= link_to post.title, post %>
   </div>
 <% end %>
+<div id="post-count">
+  <%= @posts.count %> posts since that fateful <%= @posts.last.created_at.strftime('%A')%> in <%= @posts.last.created_at.strftime('%B %Y')%>
+</div>

@@ -55,7 +55,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by_slug(params[:id])
     @title = @post.title
     @description = @post.description ? @post.description : truncate(@post.body, :length => 250)
     if request.path != post_path(@post)
