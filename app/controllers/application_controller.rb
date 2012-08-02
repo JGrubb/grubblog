@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   require 'net/http'
   
   protect_from_forgery
-  before_filter :get_tweets
-  after_filter :check_twitter
+  #before_filter :get_tweets
+  #after_filter :check_twitter
   
   def get_tweets
     @raw_tweets = Tweet.last
     # saving JSON to a database turns it in YAML.  Is that just a Rails thing?
     if @raw_tweets
-      @tweets = YAML.load(@raw_tweets.body)
+      @tweets = YAML.load(@raw_tweets.body) || []
     end
   end
   

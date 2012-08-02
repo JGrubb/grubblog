@@ -1,4 +1,13 @@
-class User < ActiveRecord::Base
+class User
+  
+  include ActiveModel::SecurePassword
+  include MongoMapper::Document
+  
+  key :email, String
+  key :password, String
+  
+  timestamps!
+  
   has_secure_password
   
   attr_accessible :email, :password, :password_confirmation

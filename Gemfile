@@ -11,6 +11,8 @@ gem 'friendly_id'
 gem 'therubyracer'
 gem 'redcarpet'
 gem 'twitter'
+gem 'mongo_mapper'
+gem 'bson_ext'
 
 # Gems used only for assets and not required
 # in production environments by default.
