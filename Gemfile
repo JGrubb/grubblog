@@ -6,13 +6,14 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'
-gem 'mysql2'
-gem 'friendly_id'
+# gem 'mysql2'
+# gem 'friendly_id'
 gem 'therubyracer'
 gem 'redcarpet'
 gem 'twitter'
 gem 'mongo_mapper'
 gem 'bson_ext'
+#gem 'rack-mini-profiler'
 
 # Gems used only for assets and not required
 # in production environments by default.
