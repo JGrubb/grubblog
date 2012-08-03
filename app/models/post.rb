@@ -14,6 +14,8 @@ class Post
   
   attr_accessible :body, :title, :published, :description
   
+  ensure_index :slug
+  
   def to_param
     "#{self.slug}"
   end
