@@ -59,7 +59,7 @@ module Blog
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.paths = %w{ assets }
+    #config.assets.paths = %w{ assets }
     config.assets.version = '1.0'
     require_relative 'email'
     config.generators.stylesheet_engine = :sass
