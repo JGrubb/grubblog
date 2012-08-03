@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+      session[:user_id] = user.id.to_s
       redirect_to root_url, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid login"
