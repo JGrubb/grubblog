@@ -2,7 +2,7 @@ class Post
   
   include MongoMapper::Document
   
-  many :comments
+# many :comments
   
   key :body, String, required: true
   key :title, String, required: true
