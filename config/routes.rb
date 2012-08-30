@@ -1,4 +1,4 @@
-Blog::Application.routes.draw do
+Newlog::Application.routes.draw do
   
   
   controller :mail do
