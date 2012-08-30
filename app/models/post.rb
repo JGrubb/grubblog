@@ -15,9 +15,18 @@ class Post
   attr_accessible :body, :title, :published, :description
   
   ensure_index :slug
-  
+
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
   def to_param
     "#{self.slug}"
   end
-  
+
+  def self.search(params)
+    tire.search(load: true) do
+      query { string params[:query], default_operator: "AND" } if params[:query].present?
+      sort { by :created_at, "desc" } if params[:query].blank?
+    end
+  end
 end

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   # caches_page :index
   def index
-    @posts = Post.order("created_at DESC").where(:published => true).limit(5)
+    @posts = Post.search(params)
     @title = "Home"
     @description = "the blog and website of bassist and programmer Johnny Grubb.  no baseball information here."
     respond_to do |format|

@@ -23,6 +23,12 @@
       <h1><%= link_to 'Johnny Grubb', root_path, :class => "brand" %></h1>
       <p><em>Adventures in stuff</em></p>
       <%= render "layouts/nav" %>
+      <%= form_tag posts_path, method: :get do %>
+        <p>
+          <%= text_field_tag :query, params[:query] %>
+          <%= submit_tag "Search", name: nil %>
+        </p>
+      <% end %>
       </div>
     </div>
   </header>
