@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -13,6 +13,8 @@ gem 'redcarpet'
 gem 'twitter'
 gem 'mongo_mapper'
 gem 'bson_ext'
+gem 'tire'
+
 #gem 'rack-mini-profiler'
 
 # Gems used only for assets and not required
