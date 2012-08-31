@@ -19,9 +19,9 @@ class Post
   include Tire::Model::Search
   include Tire::Model::Callbacks
 
-  #def to_param
-  #  "#{self.slug}"
-  #end
+  def to_param
+    "#{self.slug}"
+  end
   
   def to_indexed_json
     self.as_json
