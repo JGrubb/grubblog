@@ -22,6 +22,10 @@ class Post
   def to_param
     "#{self.slug}"
   end
+  
+  def to_indexed_json
+    self.as_json
+  end
 
   def self.search(params)
     tire.search(load: true) do
