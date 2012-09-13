@@ -4,7 +4,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: blog
+  database: blog_development
 
 test:
   <<: *defaults
