@@ -18,3 +18,4 @@ config/twitter.rb
 blog.sql
 config/email.rb
 *.DS_Store
+*.swp
